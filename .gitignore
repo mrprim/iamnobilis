@@ -9,7 +9,6 @@ target
 keystore
 node_modules
 node/
-build/
 npm-debug.log
 *.http
 stats.json
