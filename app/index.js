@@ -2,13 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-
 import Layout from './containers/Layout'
-
 import configureStore from './store'
 import startSagas from './sagas'
 import routes from './routes'
-
 import i18next from 'i18next'
 import translations from './translations'
 import { setTranslator } from './utils/translate'
