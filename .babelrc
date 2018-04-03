@@ -1,0 +1,31 @@
+{
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 3% in US",
+            "last 5 Chrome versions",
+            "last 5 Firefox versions",
+            "last 5 Edge versions",
+            "ie >= 9"
+          ]
+        }
+      }
+    ]
+  ],
+  "compact": "true",
+  "minified": "true",
+  "plugins": [
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        [ "babel-plugin-webpack-alias", { "config": "./webpack.config-test.babel.js" } ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.ico">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,100" rel="stylesheet" type="text/css">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+
+  <% if (htmlWebpackPlugin.options.isProd) { %>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <% } else { %>
+      <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+      <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+      <% } %>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>
