@@ -1,7 +1,9 @@
 import React from 'react'
 
-const Character = ({ estate, generateCharacterClick }) => <div onClick={generateCharacterClick}>
-  I am the person who is the god of {estate}.
-</div>
+const Character = ({ identity, descriptor, estate, generateCharacterClick }) => (
+  <div onClick={generateCharacterClick}>
+    I am the {identity} who is the {descriptor} god of {estate}.
+  </div>
+)
 
 module.exports = Character

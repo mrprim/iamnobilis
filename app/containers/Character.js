@@ -6,6 +6,8 @@ import { withRouter } from 'react-router'
 import * as actions from '../actions/character'
 
 const mapStateToProps = state => ({
+  identity: state.character.identity,
+  descriptor: state.character.descriptor,
   estate: state.character.estate
 })
 

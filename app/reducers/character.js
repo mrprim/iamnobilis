@@ -4,10 +4,12 @@ const initialState = {}
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case types.SET_ESTATE:
+    case types.SET_CHARACTER:
       return {
         ...state,
-        estate: action.estate
+        identity: action.character.identity,
+        descriptor: action.character.descriptor,
+        estate: action.character.estate
       }
     default:
       return state

@@ -11,7 +11,12 @@ export default function * () {
 export function * loader (action) {
   let i = 0
   while (i < 8) {
-    yield put(actions.setEstate(generators.things.random()))
+    const char = {
+      identity: generators.things.random(),
+      descriptor: generators.things.random(),
+      estate: generators.things.random()
+    }
+    yield put(actions.setCharacter(char))
     yield delay(50)
     i++
   }
