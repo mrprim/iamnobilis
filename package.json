@@ -2,7 +2,7 @@
   "name": "iamnobilis",
   "version": "1.0.0",
   "description": "A Random Character Generator for a Lightweight Nobilis ",
-  "repository": "https://github.com/mrprim/iamnobilisk",
+  "repository": "https://github.com/mrprim/iamnobilis",
   "main": "",
   "author": "",
   "license": "MIT",
@@ -10,8 +10,9 @@
     "lint": "standard \"./app/**/*.js\" | snazzy",
     "dev": "webpack --config webpack.config.dev.js -dw",
     "build": "webpack --config webpack.config.js",
-    "start": "node ./server.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
     "start-dev": "webpack-dev-server --config webpack.config.dev.js"
+    "start": "node ./server.js",
   },
   "dependencies": {
     "addstrap": "^1.0.8",
