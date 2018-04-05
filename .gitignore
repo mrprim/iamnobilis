@@ -12,4 +12,4 @@ node/
 npm-debug.log
 *.http
 stats.json
-*.hot-update.*
+build/
