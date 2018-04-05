@@ -2,6 +2,12 @@
  * Using OpenSans in select boxes causes some font clipping,
  * this variable allows the fix to be adjusted
  */
+body {
+  font-family: "Open Sans"; }
+
+.footer {
+  display: none;
+  color: #669999; }
 @charset "UTF-8";
 .manifest-controls {
   padding: 1em 0;
@@ -60,6 +66,8 @@
 .manifest-header.loading {
   color: #777; }
 .character {
+  font-family: "Open Sans";
   font-size: 2em; }
   .character .modifier {
+    font-family: Pacifico;
     text-decoration: underline; }

@@ -9,11 +9,18 @@ import 'redux-manifest/dist/styles.css'
 
 const Layout = props => {
   return (
-    <div className='Layout'>
+    <div className='iamnobilis-layout'>
       <Container fluid>
-        <Row className='addstack-main'>
+        <Row className='iamnobilis-main'>
           <Col>
             {props.children}
+          </Col>
+        </Row>
+        <Row className='footer'>
+          <Col>
+            <a href='https://docs.google.com/document/d/1oeTWDAhVmTqJvhKEZbncfig471zNVECe3P6e51zs-pA/edit?usp=sharing'>
+              I Am Nobilis
+            </a> is an ultra simple hack for the roleplaying game Nobilis by Jenna K Moran.
           </Col>
         </Row>
       </Container>
