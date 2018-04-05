@@ -10,7 +10,7 @@
     "lint": "standard \"./app/**/*.js\" | snazzy",
     "dev": "webpack --config webpack.config.dev.js -dw",
     "build": "webpack --config webpack.config.js",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.dev.js --progress",
     "start-dev": "webpack-dev-server --config webpack.config.dev.js",
     "start": "node ./server.js"
   },
