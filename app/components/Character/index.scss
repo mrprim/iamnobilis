@@ -1,6 +1,7 @@
 .character {
   font-family: "Open Sans";
   font-size: 2em;
+  transition: color .25s;
 
   .modifier {
     font-family: Pacifico;
@@ -8,6 +9,6 @@
   }
 
   &.loading {
-      color: #669999;
+    color: #669999;
   }
 }
