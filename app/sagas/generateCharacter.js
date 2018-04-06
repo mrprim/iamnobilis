@@ -4,6 +4,7 @@ import * as types from '../constants/actionTypes'
 import * as actions from '../actions/character'
 import generators from 'random-rpg-stuff'
 import sample from '../utils/sample'
+import pluralize from 'pluralize'
 
 export default function * () {
   yield takeEvery(types.GENERATE_CHARACTER, loader)
@@ -18,12 +19,12 @@ export function * loader (action) {
         generators.characters.classes()
       ]),
       descriptor: generators.misc.descriptors(),
-      estate: sample([
+      estate: pluralize(sample([
         generators.things.random(),
         generators.things.random(),
         generators.things.random(),
         generators.characters.classes()
-      ])
+      ])).toLowerCase()
     }
     yield put(actions.setCharacter(char))
     yield delay(50)
