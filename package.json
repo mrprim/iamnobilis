@@ -9,8 +9,8 @@
   "scripts": {
     "lint": "standard \"./app/**/*.js\" | snazzy",
     "dev": "webpack --config webpack.config.dev.js -dw",
-    "build": "webpack --config webpack.config.js",
-    "heroku-postbuild": "webpack -p --config ./webpack.config.dev.js --progress",
+    "build": "webpack --config webpack.config.js -p",
+    "heroku-postbuild": "webpack --config ./webpack.config.js --progress",
     "start-dev": "webpack-dev-server --config webpack.config.dev.js",
     "start": "node ./server.js"
   },
