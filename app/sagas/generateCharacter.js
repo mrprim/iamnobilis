@@ -12,6 +12,7 @@ export default function * () {
 
 export function * loader (action) {
   let i = 0
+  yield put(actions.setLoading(true))
   while (i < 8) {
     const char = {
       identity: sample([
@@ -30,4 +31,5 @@ export function * loader (action) {
     yield delay(50)
     i++
   }
+  yield put(actions.setLoading(false))
 }

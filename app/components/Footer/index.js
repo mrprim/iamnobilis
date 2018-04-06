@@ -16,7 +16,7 @@ const Footer = props => <div className='footer'>
     </a>
   </div>
 
-  <div>© 2018</div>
+  <div>© Sergio Rodriguez 2018</div>
   <div><i>Nobilis</i> is © Jenna Katerin Moran</div>
 </div>
 

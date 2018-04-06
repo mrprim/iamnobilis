@@ -6,8 +6,10 @@ const aVsAn = word => {
   return ['a', 'e', 'i', 'o', 'u'].indexOf(word[0].toLowerCase()) >= 0 ? 'an' : 'a'
 }
 
-const Character = ({ identity = '', adjective = '', estate = '', generateCharacterClick }) => (
-  <div className='character' onClick={generateCharacterClick}>
+const getClassName = loading => loading ? 'character loading' : 'character'
+
+const Character = ({ loading, identity = '', adjective = '', estate = '', generateCharacterClick }) => (
+  <div className={getClassName(loading)} onClick={generateCharacterClick}>
     {'I am ' + aVsAn(identity) + ' '}
     <span className='modifier identity'>
       {identity.toLowerCase()}

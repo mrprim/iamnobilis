@@ -1,8 +1,9 @@
 @import "../../variables.scss";
 
 html {
-  height: 100%;
   box-sizing: border-box;
+  font-family: "Open Sans";
+  height: 100%;
 }
 
 *, *:before, *:after {
@@ -10,9 +11,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans";
   position: relative;
   margin: 0;
-//  padding-bottom: 6rem;
   min-height: 100%;
 }
