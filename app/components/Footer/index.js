@@ -16,11 +16,8 @@ const Footer = props => <div className='footer'>
     </a>
   </div>
 
-  <span>©2018</span>
-  <a href='https://docs.google.com/document/d/1oeTWDAhVmTqJvhKEZbncfig471zNVECe3P6e51zs-pA/edit?usp=sharing'>
-    I Am Nobilis
-  </a>
-  is an ultra simple hack for the roleplaying game Nobilis by Jenna K Moran.
+  <div>© 2018</div>
+  <div><i>Nobilis</i> is © Jenna Katerin Moran</div>
 </div>
 
 Footer.propTypes = {}
