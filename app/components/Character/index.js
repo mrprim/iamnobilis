@@ -1,19 +1,24 @@
 import React from 'react'
 import './index.scss'
 
-const Character = ({ identity, descriptor, estate, generateCharacterClick }) => (
+const aVsAn = word => {
+  if (!word) return 'a'
+  return ['a', 'e', 'i', 'o', 'u'].indexOf(word[0].toLowerCase()) >= 0 ? 'an' : 'a'
+}
+
+const Character = ({ identity = '', adjective = '', estate = '', generateCharacterClick }) => (
   <div className='character' onClick={generateCharacterClick}>
-    {'I am the '}
+    {'I am ' + aVsAn(identity) + ' '}
     <span className='modifier identity'>
-      {identity}
+      {identity.toLowerCase()}
     </span>
     {' who is the '}
-    <span className='modifier descriptor'>
-      {descriptor}
+    <span className='modifier adjective'>
+      {adjective}
     </span>
     {' god of '}
     <span className='modifier estate'>
-      {estate}
+      {estate.toLowerCase()}
     </span>
     {'.'}
   </div>

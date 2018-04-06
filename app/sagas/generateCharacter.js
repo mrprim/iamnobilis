@@ -18,13 +18,13 @@ export function * loader (action) {
         generators.things.animals(),
         generators.characters.classes()
       ]),
-      descriptor: generators.misc.descriptors(),
+      adjective: generators.misc.descriptors(),
       estate: pluralize(sample([
         generators.things.random(),
         generators.things.random(),
         generators.things.random(),
         generators.characters.classes()
-      ])).toLowerCase()
+      ]))
     }
     yield put(actions.setCharacter(char))
     yield delay(50)

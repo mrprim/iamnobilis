@@ -7,7 +7,7 @@ import * as actions from '../actions/character'
 
 const mapStateToProps = state => ({
   identity: state.character.identity,
-  descriptor: state.character.descriptor,
+  adjective: state.character.adjective,
   estate: state.character.estate
 })
 

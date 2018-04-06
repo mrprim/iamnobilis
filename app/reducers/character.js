@@ -8,7 +8,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         identity: action.character.identity,
-        descriptor: action.character.descriptor,
+        adjective: action.character.adjective,
         estate: action.character.estate
       }
     default:
