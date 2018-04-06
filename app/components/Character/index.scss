@@ -12,3 +12,19 @@
     color: #669999;
   }
 }
+
+.copy-button {
+  font-family: "Open Sans";
+  font-size: 2em;  
+  cursor: pointer;
+  text-align: center;
+  transition: color .25s;
+
+  &:hover {
+    color: #669999;      
+  }
+
+  &:active {
+    color: #777777;      
+  }
+}
