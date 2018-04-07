@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
   loading: state.character.loading,
   identity: state.character.identity,
   adjective: state.character.adjective,
-  estate: state.character.estate
+  estate: state.character.estate,
+  highlight: state.character.highlight
 })
 
 const mapDispatchToProps = dispatch => (

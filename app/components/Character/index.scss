@@ -3,7 +3,15 @@
   font-size: 2em;
   transition: color .25s;
 
-  .modifier {
+  .highlight {
+    transition: background-color 2s .25s;
+  }
+  &:not(.loading) .highlight {
+    background-color: yellow;
+  }
+
+  
+  .stat {
     font-family: Pacifico;
     text-decoration: underline;
   }

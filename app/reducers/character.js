@@ -14,7 +14,8 @@ export default function (state = initialState, action) {
         ...state,
         identity: action.character.identity,
         adjective: action.character.adjective,
-        estate: action.character.estate
+        estate: action.character.estate,
+        highlight: action.character.highlight
       }
     default:
       return state
