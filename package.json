@@ -32,7 +32,6 @@
     "expect": "^22.2.0",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^3.0.2",
-    "fontgen-loader": "0.2.1",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.30.1",
     "i18next": "^10.4.1",
