@@ -12,7 +12,7 @@ export default function * () {
 
 const generateCharacter = () => ({
   highlight: sample(['iAm', 'identity', 'estate', 'god', 'ofEstate']),
-  identity: randomRpgStuff(['animal', 'class']),
+  identity: randomRpgStuff(['job', 'job', 'animal', 'class']),
   adjective: randomRpgStuff(['descriptor']),
   estate: pluralize(randomRpgStuff('noun'))
 })
