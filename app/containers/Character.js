@@ -8,7 +8,7 @@ import copyToClipboard from '../utils/copyToClipboard'
 import aVsAn from '../utils/aVsAn'
 
 const mapStateToProps = (state, props) => {
-  const urlCharacter = getUrlCharacter(props.match.params.character)
+  const urlCharacter = getUrlCharacter(props.match.params.character) || {}
 
   return {
     loading: state.character.loading,
