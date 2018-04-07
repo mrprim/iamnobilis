@@ -10,11 +10,11 @@ export default function * () {
   yield takeEvery(types.GENERATE_CHARACTER, loader)
 }
 
-const generateCharacter = () => ({
-  highlight: sample(['iAm', 'identity', 'estate', 'god', 'ofEstate']),
-  identity: randomRpgStuff(['job', 'job', 'animal', 'class']),
-  adjective: randomRpgStuff(['descriptor']),
-  estate: pluralize(randomRpgStuff('noun'))
+const generateCharacter = (character = {}) => ({
+  highlight: character.highlight || sample(['iAm', 'identity', 'estate', 'god', 'ofEstate']),
+  identity: character.identity || randomRpgStuff(['job', 'job', 'animal', 'class']),
+  adjective: character.adjective || randomRpgStuff(['descriptor']),
+  estate: character.estate || pluralize(randomRpgStuff('noun'))
 })
 
 export function * loader (action) {
@@ -25,5 +25,7 @@ export function * loader (action) {
     yield delay(50)
     i++
   }
+
+  yield put(actions.setCharacter(generateCharacter(action.character)))
   yield put(actions.setLoading(false))
 }

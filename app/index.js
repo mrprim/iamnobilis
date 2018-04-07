@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import Layout from './containers/Layout'
 import configureStore from './store'
@@ -23,7 +23,9 @@ ReactDOM.render(<div>
   <Provider store={store}>
     <HashRouter>
       <Layout>
-        {routes.map(mapRouteToRouteComponent)}
+        <Switch>
+          {routes.map(mapRouteToRouteComponent)}
+        </Switch>
       </Layout>
     </HashRouter>
   </Provider>

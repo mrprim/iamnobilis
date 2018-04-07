@@ -7,13 +7,27 @@ import * as actions from '../actions/character'
 import copyToClipboard from '../utils/copyToClipboard'
 import aVsAn from '../utils/aVsAn'
 
-const mapStateToProps = state => ({
-  loading: state.character.loading,
-  identity: state.character.identity,
-  adjective: state.character.adjective,
-  estate: state.character.estate,
-  highlight: state.character.highlight
-})
+const mapStateToProps = (state, props) => {
+  const urlCharacter = getUrlCharacter(props.match.params.character)
+
+  return {
+    loading: state.character.loading,
+    identity: state.character.identity || urlCharacter.identity,
+    adjective: state.character.adjective || urlCharacter.adjective,
+    estate: state.character.estate || urlCharacter.estate,
+    highlight: state.character.highlight || urlCharacter.highlight
+  }
+}
+
+const getUrlCharacter = string => {
+  if (!string) return
+
+  try {
+    return JSON.parse(string)
+  } catch (ex) {
+    console.log('Unable to parse URL paramater', ex)
+  }
+}
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
@@ -38,7 +52,14 @@ const buildTextString = ({ estate, identity, adjective }) => {
 
 const lifecycleMethods = {
   componentWillMount () {
-    this.props.generateCharacter()
+    const character = {
+      identity: this.props.identity,
+      adjective: this.props.adjective,
+      estate: this.props.estate,
+      highlight: this.props.highlight
+    }
+
+    this.props.generateCharacter(character)
   }
 }
 

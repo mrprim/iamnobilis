@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import PropTypes from 'prop-types'
 import Footer from '../Footer'
 import './index.scss'
 
@@ -17,10 +16,6 @@ const Layout = props => {
       <Footer />
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.array
 }
 
 export default Layout
