@@ -5,17 +5,17 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import * as actions from '../actions/character'
 import copyToClipboard from '../utils/copyToClipboard'
-import aVsAn from '../utils/aVsAn'
+import generateCharacter from '../utils/generateCharacter'
+import getCharacterString from '../utils/getCharacterString'
 
 const mapStateToProps = (state, props) => {
-  const urlCharacter = getUrlCharacter(props.match.params.character) || {}
-
   return {
     loading: state.character.loading,
-    identity: state.character.identity || urlCharacter.identity,
-    adjective: state.character.adjective || urlCharacter.adjective,
-    estate: state.character.estate || urlCharacter.estate,
-    highlight: state.character.highlight || urlCharacter.highlight
+    urlParam: props.match.params.character,
+    identity: state.character.identity,
+    adjective: state.character.adjective,
+    estate: state.character.estate,
+    highlight: state.character.highlight
   }
 }
 
@@ -23,7 +23,7 @@ const getUrlCharacter = string => {
   if (!string) return
 
   try {
-    return JSON.parse(string)
+    return JSON.parse(decodeURIComponent(string))
   } catch (ex) {
     console.log('Unable to parse URL paramater', ex)
   }
@@ -36,30 +36,25 @@ const mapDispatchToProps = dispatch => (
 )
 
 const handlers = {
-  generateCharacterClick: props => ev => props.generateCharacter(),
-  copyToClipboardClick: props => ev => copyToClipboard(buildTextString(props))
-}
-
-const buildTextString = ({ estate, identity, adjective }) => {
-  return 'I am ' +
-    aVsAn(identity) + ' ' +
-    identity.toLowerCase() +
-    ' who is the ' +
-    adjective +
-    ' god of ' +
-    estate.toLowerCase()
+  generateCharacterClick: props => ev => {
+    const character = generateCharacter()
+    window.location.hash = encodeURIComponent(JSON.stringify(character))
+  },
+  copyToClipboardClick: props => ev => copyToClipboard(getCharacterString(props))
 }
 
 const lifecycleMethods = {
   componentWillMount () {
-    const character = {
-      identity: this.props.identity,
-      adjective: this.props.adjective,
-      estate: this.props.estate,
-      highlight: this.props.highlight
-    }
+    const character = getUrlCharacter(this.props.urlParam)
 
     this.props.generateCharacter(character)
+  },
+  componentWillReceiveProps (nProps) {
+    if (!nProps) return
+    if (nProps.match.params.character === this.props.urlParam) return
+
+    const nCharacter = getUrlCharacter(nProps.match.params.character)
+    this.props.generateCharacter(nCharacter)
   }
 }
 
