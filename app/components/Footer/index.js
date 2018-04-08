@@ -37,9 +37,9 @@ const Footer = props => <div className='footer'>
       <span title='Actual'>
         <Icon type='actual' />
       </span>
-      <span title='Zu'>
+      <Link title='Zu' to={formatLink({ type: 'zu' })} >
         <Icon type='zu' />
-      </span>
+      </Link>
 
     </div>
   </div>

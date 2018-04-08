@@ -3,6 +3,7 @@ import './index.scss'
 import Noble from '../Noble'
 import Strategist from '../Strategist'
 import Warmain from '../Warmain'
+import Zu from '../Zu'
 
 const getClassName = loading => loading ? 'character loading' : 'character'
 
@@ -11,6 +12,7 @@ const CharacterType = ({ type, data }) => {
     case 'noble': return <Noble {...data} />
     case 'strategist': return <Strategist {...data} />
     case 'warmain': return <Warmain {...data} />
+    case 'zu': return <Zu {...data} />
     default: return <Noble {...data} />
   }
 }

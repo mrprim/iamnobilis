@@ -5,6 +5,7 @@ const getCharacterString = character => {
     case 'noble': return noble(character)
     case 'warmain': return warmain(character)
     case 'strategist': return strategist(character)
+    case 'zu': return zu(character)
     default: return noble(character)
   }
 }
@@ -41,4 +42,16 @@ const strategist = character => {
     character.estate.toLowerCase() +
     '.'
 }
+
+const zu = character => {
+  return 'I am ' +
+    aVsAn(character.identity) + ' ' +
+    character.identity.toLowerCase() +
+    ' who is the master of ' +
+    character.adjective +
+    ' ' +
+    character.estate.toLowerCase() +
+    '-style martial arts.'
+}
+
 module.exports = getCharacterString
