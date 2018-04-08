@@ -3,6 +3,7 @@ import aVsAn from './aVsAn'
 const getCharacterString = character => {
   switch (character.type) {
     case 'noble': return noble(character)
+    case 'warmain': return warmain(character)
     case 'strategist': return strategist(character)
     default: return noble(character)
   }
@@ -19,6 +20,17 @@ const noble = character => {
     '.'
 }
 
+const warmain = character => {
+  return 'I am ' +
+    aVsAn(character.identity) + ' ' +
+    character.identity.toLowerCase() +
+    ' who is the ' +
+    character.adjective +
+    ' Warmain who wields the Test of ' +
+    character.estate.toLowerCase() +
+    '.'
+}
+
 const strategist = character => {
   return 'I am ' +
     aVsAn(character.identity) + ' ' +
@@ -29,5 +41,4 @@ const strategist = character => {
     character.estate.toLowerCase() +
     '.'
 }
-
 module.exports = getCharacterString

@@ -4,7 +4,7 @@ import './index.scss'
 
 const getHighlightableClass = (name, highlight, isStat) => (isStat ? 'stat' : '') + (highlight === name ? ' highlight' : '')
 
-const Noble = (props) => {
+const Warmain = (props) => {
   if (!props.identity) return null
 
   return (
@@ -28,11 +28,11 @@ const Noble = (props) => {
       {' '}
 
       <span className={getHighlightableClass('treasure', props.highlight)}>
-        {'Strategist'}
+        {'Warmain'}
       </span>
 
-      {' dying from '}
-      <span className='stat'>
+      {' who wields the test of '}
+      <span className={getHighlightableClass('domain', props.highlight, true)}>
         {props.estate.toLowerCase()}
       </span>
       {'.'}
@@ -40,4 +40,4 @@ const Noble = (props) => {
   )
 }
 
-module.exports = Noble
+module.exports = Warmain
