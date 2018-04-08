@@ -15,7 +15,8 @@ const noble = character => {
     ' who is the ' +
     character.adjective +
     ' god of ' +
-    character.estate.toLowerCase()
+    character.estate.toLowerCase() +
+    '.'
 }
 
 const strategist = character => {
@@ -25,7 +26,8 @@ const strategist = character => {
     ' who is the ' +
     character.adjective +
     ' Strategist dying from ' +
-    character.estate.toLowerCase()
+    character.estate.toLowerCase() +
+    '.'
 }
 
 module.exports = getCharacterString
