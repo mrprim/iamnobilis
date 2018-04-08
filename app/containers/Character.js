@@ -12,6 +12,7 @@ const mapStateToProps = (state, props) => {
   return {
     loading: state.character.loading,
     urlParam: props.match.params.character,
+    type: state.character.type,
     identity: state.character.identity,
     adjective: state.character.adjective,
     estate: state.character.estate,
@@ -37,7 +38,7 @@ const mapDispatchToProps = dispatch => (
 
 const handlers = {
   generateCharacterClick: props => ev => {
-    const character = generateCharacter()
+    const character = generateCharacter({ type: props.type })
     window.location.hash = encodeURIComponent(JSON.stringify(character))
   },
   copyToClipboardClick: props => ev => copyToClipboard(getCharacterString(props))
@@ -45,8 +46,9 @@ const handlers = {
 
 const lifecycleMethods = {
   componentWillMount () {
-    const character = getUrlCharacter(this.props.urlParam)
+    const character = generateCharacter(getUrlCharacter(this.props.urlParam))
 
+    window.location.hash = encodeURIComponent(JSON.stringify(character))
     this.props.generateCharacter(character)
   },
   componentWillReceiveProps (nProps) {

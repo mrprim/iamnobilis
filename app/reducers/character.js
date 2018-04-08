@@ -12,6 +12,7 @@ export default function (state = initialState, action) {
     case types.SET_CHARACTER:
       return {
         ...state,
+        type: action.character.type,
         identity: action.character.identity,
         adjective: action.character.adjective,
         estate: action.character.estate,

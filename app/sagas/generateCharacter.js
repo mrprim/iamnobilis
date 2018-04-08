@@ -12,7 +12,8 @@ export function * loader (action) {
   let i = 0
   yield put(actions.setLoading(true))
   while (i < 5) {
-    yield put(actions.setCharacter(generateCharacter()))
+    const char = generateCharacter({ type: action.character && action.character.type })
+    yield put(actions.setCharacter(char))
     yield delay(50)
     i++
   }

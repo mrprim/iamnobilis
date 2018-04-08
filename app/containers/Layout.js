@@ -3,7 +3,9 @@ import { compose, withHandlers, lifecycle } from 'recompose'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-const mapStateToProps = (state, props) => ({})
+const mapStateToProps = state => ({
+  type: state.character.type
+})
 
 const mapDispatchToProps = dispatch => ({})
 
