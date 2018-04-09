@@ -3,7 +3,7 @@ import { compose, withHandlers } from 'recompose'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-// import * as actions from '../actions/character'
+import * as actions from '../actions/character'
 import copyToClipboard from '../utils/copyToClipboard'
 import getCharacterString from '../utils/getCharacterString'
 
@@ -14,11 +14,12 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
-    //    generateCharacter: actions.generateCharacter
+    generateCharacter: actions.generateCharacter
   }, dispatch)
 )
 
 const handlers = {
+  loadClick: props => type => ev => props.generateCharacter(type),
   copyToClipboardClick: props => ev => copyToClipboard(getCharacterString(props.type, props.character))
 }
 
