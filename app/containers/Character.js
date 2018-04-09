@@ -33,18 +33,25 @@ const handlers = {
 }
 
 const lifecycleMethods = {
-  componentWillMount() {
+  componentWillMount () {
     const urlCharacter = parseUrlObjectString(this.props.urlCharacterString)
-    const character = generateCharacter(this.props.type, urlCharacter)
+    if (!urlCharacter) {
+      this.props.generateCharacter(this.props.type)
+    }
 
+    const character = generateCharacter(this.props.type, urlCharacter)
     this.props.setCharacter(character)
   },
 
-  componentWillReceiveProps(nProps) {
+  componentWillReceiveProps (nProps) {
     if (!nProps) return
     if (nProps.match.params.character === this.props.urlCharacterString) return
 
     const urlCharacter = parseUrlObjectString(nProps.match.params.character)
+    if (!urlCharacter) {
+      this.props.generateCharacter(this.props.type)
+    }
+
     const character = generateCharacter(nProps.type, urlCharacter)
 
     this.props.setCharacter(character)
