@@ -9,7 +9,7 @@ import parseUrlObjectString from '../utils/parseUrlObjectString'
 
 const mapStateToProps = (state, props) => {
   const urlParams = props.match.params
-  console.log(props.match.params)
+
   return {
     loading: state.character.loading,
     urlCharacterString: urlParams.character,
@@ -33,14 +33,14 @@ const handlers = {
 }
 
 const lifecycleMethods = {
-  componentWillMount () {
+  componentWillMount() {
     const urlCharacter = parseUrlObjectString(this.props.urlCharacterString)
     const character = generateCharacter(this.props.type, urlCharacter)
 
     this.props.setCharacter(character)
   },
 
-  componentWillReceiveProps (nProps) {
+  componentWillReceiveProps(nProps) {
     if (!nProps) return
     if (nProps.match.params.character === this.props.urlCharacterString) return
 

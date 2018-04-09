@@ -1,7 +1,7 @@
 import aVsAn from './aVsAn'
 
-const getCharacterString = character => {
-  switch (character.type) {
+const getCharacterString = (type, character) => {
+  switch (type) {
     case 'noble': return noble(character)
     case 'warmain': return warmain(character)
     case 'strategist': return strategist(character)
