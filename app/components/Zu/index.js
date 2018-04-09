@@ -1,6 +1,7 @@
 import React from 'react'
 import aVsAn from '../../utils/aVsAn'
 import './index.scss'
+import toTitleCase from '../../utils/toTitleCase'
 
 const getHighlightableClass = (name, highlight, isStat) => (isStat ? 'stat' : '') + (highlight === name ? ' highlight' : '')
 
@@ -22,13 +23,13 @@ const Zu = (props) => {
       {' who is the master of '}
 
       <span className='stat'>
-        {props.adjective}
+        {toTitleCase(props.adjective)}
       </span>
 
       {' '}
 
       <span className={getHighlightableClass('domain', props.highlight, true)}>
-        {props.estate.toLowerCase()}
+        {toTitleCase(props.estate)}
       </span>
 
       {'-style martial arts.'}
@@ -36,4 +37,4 @@ const Zu = (props) => {
   )
 }
 
-module.exports = Zu
+export default Zu

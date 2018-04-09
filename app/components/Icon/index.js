@@ -79,4 +79,4 @@ const Actual = () => (
   </svg>
 )
 
-module.exports = Icon
+export default Icon

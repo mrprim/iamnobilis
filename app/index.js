@@ -6,14 +6,8 @@ import Layout from './containers/Layout'
 import configureStore from './store'
 import startSagas from './sagas'
 import routes from './routes'
-import i18next from 'i18next'
-import translations from './translations'
-import { setTranslator } from './utils/translate'
 
 export const store = configureStore()
-
-i18next.init({ lng: 'en', resources: translations })
-setTranslator(i18next.t.bind(i18next))
 
 startSagas()
 

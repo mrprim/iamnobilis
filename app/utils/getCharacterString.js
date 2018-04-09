@@ -1,4 +1,5 @@
 import aVsAn from './aVsAn'
+import toTitleCase from './toTitleCase'
 
 const getCharacterString = (type, character) => {
   switch (type) {
@@ -48,10 +49,10 @@ const zu = character => {
     aVsAn(character.identity) + ' ' +
     character.identity.toLowerCase() +
     ' who is the master of ' +
-    character.adjective +
+    toTitleCase(character.adjective) +
     ' ' +
-    character.estate.toLowerCase() +
+    toTitleCase(character.estate) +
     '-style martial arts.'
 }
 
-module.exports = getCharacterString
+export default getCharacterString

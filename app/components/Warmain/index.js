@@ -1,6 +1,7 @@
 import React from 'react'
 import aVsAn from '../../utils/aVsAn'
 import './index.scss'
+import toTitleCase from '../../utils/toTitleCase'
 
 const getHighlightableClass = (name, highlight, isStat) => (isStat ? 'stat' : '') + (highlight === name ? ' highlight' : '')
 
@@ -31,13 +32,13 @@ const Warmain = (props) => {
         {'Warmain'}
       </span>
 
-      {' who wields the test of '}
+      {' who wields the Test of '}
       <span className={getHighlightableClass('domain', props.highlight, true)}>
-        {props.estate.toLowerCase()}
+        {toTitleCase(props.estate)}
       </span>
       {'.'}
     </div>
   )
 }
 
-module.exports = Warmain
+export default Warmain

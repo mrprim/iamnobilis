@@ -44,4 +44,4 @@ const Noble = (props) => {
   )
 }
 
-module.exports = Noble
+export default Noble

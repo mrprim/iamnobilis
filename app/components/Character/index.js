@@ -30,4 +30,5 @@ const Character = props => {
     </div>
   )
 }
-module.exports = Character
+
+export default Character

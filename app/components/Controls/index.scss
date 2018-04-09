@@ -23,9 +23,11 @@
       fill: lightgrey;
     }
 
-    .link:not(.dead) .Icon path {
-      fill: #669999;
+    .link:not(.dead) {
       cursor: pointer;
+      .Icon path {
+        fill: #669999;
+      }
     }
   }
 }

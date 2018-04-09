@@ -4,7 +4,7 @@ import './index.scss'
 
 const getHighlightableClass = (name, highlight, isStat) => (isStat ? 'stat' : '') + (highlight === name ? ' highlight' : '')
 
-const Noble = (props) => {
+const Strategist = (props) => {
   if (!props.identity) return null
 
   return (
@@ -40,4 +40,4 @@ const Noble = (props) => {
   )
 }
 
-module.exports = Noble
+export default Strategist

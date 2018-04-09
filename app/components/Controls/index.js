@@ -40,4 +40,4 @@ const Controls = ({ loadClick, copyToClipboardClick }) => (
   </div>
 )
 
-module.exports = Controls
+export default Controls
