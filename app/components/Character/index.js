@@ -4,6 +4,7 @@ import Noble from '../Noble'
 import Strategist from '../Strategist'
 import Warmain from '../Warmain'
 import Zu from '../Zu'
+import Controls from '../../containers/Controls'
 
 const getClassName = loading => loading ? 'character loading' : 'character'
 
@@ -16,21 +17,17 @@ const CharacterType = ({ type, data }) => {
     default: return <Noble {...data} />
   }
 }
-const Character = (props) => {
+
+const Character = props => {
   if (!props.identity) return null
 
   return (
     <div>
-      <div
-        className={getClassName(props.loading)}
-        onClick={props.generateCharacterClick}>
+      <div className={getClassName(props.loading)} onClick={props.generateCharacterClick}>
         <CharacterType type={props.type} data={props} />
       </div>
-      <div className='copy-button' onClick={props.copyToClipboardClick}>
-        <i className='fas fa-share' />
-      </div>
+      <Controls />
     </div>
   )
 }
-
 module.exports = Character

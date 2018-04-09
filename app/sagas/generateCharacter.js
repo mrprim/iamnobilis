@@ -10,14 +10,18 @@ export default function * () {
 
 export function * loader (action) {
   let i = 0
+
   yield put(actions.setLoading(true))
+
   while (i < 5) {
-    const char = generateCharacter({ type: action.character && action.character.type })
+    const char = generateCharacter(action.characterType)
     yield put(actions.setCharacter(char))
     yield delay(50)
     i++
   }
 
-  yield put(actions.setCharacter(generateCharacter(action.character)))
+  const character = generateCharacter(action.characterType, action.character)
+  window.location.hash = action.characterType + '/' + encodeURIComponent(JSON.stringify(character))
+
   yield put(actions.setLoading(false))
 }

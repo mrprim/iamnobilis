@@ -4,15 +4,16 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 import * as actions from '../actions/character'
-import copyToClipboard from '../utils/copyToClipboard'
 import generateCharacter from '../utils/generateCharacter'
-import getCharacterString from '../utils/getCharacterString'
+import parseUrlObjectString from '../utils/parseUrlObjectString'
 
 const mapStateToProps = (state, props) => {
+  const urlParams = props.match.params
+  console.log(props.match.params)
   return {
     loading: state.character.loading,
-    urlParam: props.match.params.character,
-    type: state.character.type,
+    urlCharacterString: urlParams.character,
+    type: urlParams.type || 'noble',
     identity: state.character.identity,
     adjective: state.character.adjective,
     estate: state.character.estate,
@@ -20,43 +21,33 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-const getUrlCharacter = string => {
-  if (!string) return
-
-  try {
-    return JSON.parse(decodeURIComponent(string))
-  } catch (ex) {
-    console.log('Unable to parse URL paramater', ex)
-  }
-}
-
 const mapDispatchToProps = dispatch => (
   bindActionCreators({
-    generateCharacter: actions.generateCharacter
+    generateCharacter: actions.generateCharacter,
+    setCharacter: actions.setCharacter
   }, dispatch)
 )
 
 const handlers = {
-  generateCharacterClick: props => ev => {
-    const character = generateCharacter({ type: props.type })
-    window.location.hash = encodeURIComponent(JSON.stringify(character))
-  },
-  copyToClipboardClick: props => ev => copyToClipboard(getCharacterString(props))
+  generateCharacterClick: props => ev => props.generateCharacter(props.type)
 }
 
 const lifecycleMethods = {
   componentWillMount () {
-    const character = generateCharacter(getUrlCharacter(this.props.urlParam))
+    const urlCharacter = parseUrlObjectString(this.props.urlCharacterString)
+    const character = generateCharacter(this.props.type, urlCharacter)
 
-    window.location.hash = encodeURIComponent(JSON.stringify(character))
-    this.props.generateCharacter(character)
+    this.props.setCharacter(character)
   },
+
   componentWillReceiveProps (nProps) {
     if (!nProps) return
-    if (nProps.match.params.character === this.props.urlParam) return
+    if (nProps.match.params.character === this.props.urlCharacterString) return
 
-    const nCharacter = getUrlCharacter(nProps.match.params.character)
-    this.props.generateCharacter(nCharacter)
+    const urlCharacter = parseUrlObjectString(nProps.match.params.character)
+    const character = generateCharacter(nProps.type, urlCharacter)
+
+    this.props.setCharacter(character)
   }
 }
 

@@ -1,0 +1,38 @@
+.character {
+  font-family: "Open Sans";
+  font-size: 2em;
+  transition: color .25s;
+
+  .highlight {
+    transition: background-color 2s .25s;
+  }
+  &:not(.loading) .highlight {
+    background-color: yellow;
+  }
+
+  
+  .stat {
+    font-family: Pacifico;
+    text-decoration: underline;
+  }
+
+  &.loading {
+    color: #669999;
+  }
+}
+
+.copy-button {
+  font-family: "Open Sans";
+  font-size: 2em;  
+  cursor: pointer;
+  text-align: center;
+  transition: color .25s;
+
+  &:hover {
+    color: #669999;      
+  }
+
+  &:active {
+    color: #777777;      
+  }
+}

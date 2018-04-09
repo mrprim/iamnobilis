@@ -1,7 +1,8 @@
 import * as types from '../constants/actionTypes'
 
-export const generateCharacter = character => ({
+export const generateCharacter = (characterType, character) => ({
   type: types.GENERATE_CHARACTER,
+  characterType,
   character
 })
 

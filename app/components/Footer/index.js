@@ -6,13 +6,11 @@ import './index.scss'
 // This file can be excluded, and the manifest styled manually if wished
 import 'redux-manifest/dist/styles.css'
 
-const formatLink = object => encodeURIComponent(JSON.stringify(object))
-
 const Footer = props => <div className='footer'>
 
   <div className='characters-types'>
     <div>
-      <Link title='Noble' to={formatLink({ type: 'noble' })} >
+      <Link title='Noble' to='/noble' >
         <Icon type='noble' />
       </Link>
       <span title='Imperator'>
@@ -23,13 +21,13 @@ const Footer = props => <div className='footer'>
       <span title='Deceiver'>
         <Icon type='deceiver' />
       </span>
-      <Link title='Warmain' to={formatLink({ type: 'warmain' })} >
+      <Link title='Warmain' to='/warmain' >
         <Icon type='warmain' />
       </Link>
       <span title='Mimic'>
         <Icon type='mimic' />
       </span>
-      <Link title='Strategist' to={formatLink({ type: 'strategist' })} >
+      <Link title='Strategist' to='/strategist' >
         <Icon type='strategist' />
       </Link>
     </div>
@@ -37,7 +35,7 @@ const Footer = props => <div className='footer'>
       <span title='Actual'>
         <Icon type='actual' />
       </span>
-      <Link title='Zu' to={formatLink({ type: 'zu' })} >
+      <Link title='Zu' to='/zu' >
         <Icon type='zu' />
       </Link>
 

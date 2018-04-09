@@ -4,6 +4,7 @@ const route = (path, component) => ({ path, component, exact: true })
 // const route = (path, component) => ({path, component})
 
 export default [
-  route('/:character', Character),
+  route('/:type/:character', Character),
+  route('/:type', Character),
   route('/', Character)
 ]
