@@ -15,6 +15,7 @@ const mapStateToProps = (state, props) => {
     urlCharacterString: urlParams.character,
     type: urlParams.type || 'noble',
     identity: state.character.identity,
+    category: state.character.category,
     adjective: state.character.adjective,
     estate: state.character.estate,
     highlight: state.character.highlight

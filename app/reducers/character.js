@@ -9,10 +9,7 @@ const setLoading = (state, action) => ({
 
 const setCharacter = (state, action) => ({
   ...state,
-  identity: action.character.identity,
-  adjective: action.character.adjective,
-  estate: action.character.estate,
-  highlight: action.character.highlight
+  ...action.character
 })
 
 export default function (state = initialState, action) {

@@ -16,4 +16,4 @@ const sample = (x = []) => {
   return x[i - 1]
 }
 
-module.exports = sample
+export default sample

@@ -23,16 +23,16 @@ const Controls = ({ loadClick, copyToClipboardClick }) => (
     <div className='character-types'>
       <div>
         <Link title='Noble' type='noble' loadClick={loadClick} />
-        <DeadLink title='Imperator' type='imperator' />
+        <Link title='Imperator' type='imperator' loadClick={loadClick} />
       </div>
       <div>
-        <DeadLink title='Deceiver' type='deceiver' />
+        <DeadLink title='Deceiver' type='deceiver' loadClick={loadClick} />
         <Link title='Warmain' type='warmain' loadClick={loadClick} />
-        <DeadLink title='Mimic' type='mimic' />
+        <DeadLink title='Mimic' type='mimic' loadClick={loadClick} />
         <Link title='Strategist' type='strategist' loadClick={loadClick} />
       </div>
       <div>
-        <DeadLink title='Actual' type='actual' />
+        <DeadLink title='Actual' type='actual' loadClick={loadClick} />
         <Link title='Zu' type='zu' loadClick={loadClick} />
       </div>
     </div>

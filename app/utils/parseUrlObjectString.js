@@ -8,4 +8,4 @@ const parseUrlObjectString = string => {
   }
 }
 
-module.exports = parseUrlObjectString
+export default parseUrlObjectString

@@ -7,6 +7,7 @@ const getCharacterString = (type, character) => {
     case 'warmain': return warmain(character)
     case 'strategist': return strategist(character)
     case 'zu': return zu(character)
+    case 'imperator': return imperator(character)
     default: return noble(character)
   }
 }
@@ -29,7 +30,7 @@ const warmain = character => {
     ' who is the ' +
     character.adjective +
     ' Warmain who wields the Test of ' +
-    character.estate.toLowerCase() +
+    toTitleCase(character.estate) +
     '.'
 }
 
@@ -53,6 +54,24 @@ const zu = character => {
     ' ' +
     toTitleCase(character.estate) +
     '-style martial arts.'
+}
+
+const imperator = character => {
+  return 'I am ' +
+    aVsAn(character.identity) + ' ' +
+    character.identity.toLowerCase() +
+    ' who is the ' +
+    character.adjective.toLowerCase() + ' ' +
+    character.category + ' ' +
+    'of ' +
+    formatEstateList(character.estate) + '.'
+}
+
+const formatEstateList = estates => {
+  estates = [...estates]
+  const last = estates.pop()
+
+  return estates.join(', ') + ', and ' + last.toLowerCase()
 }
 
 export default getCharacterString

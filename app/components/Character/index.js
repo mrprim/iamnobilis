@@ -4,6 +4,7 @@ import Noble from '../Noble'
 import Strategist from '../Strategist'
 import Warmain from '../Warmain'
 import Zu from '../Zu'
+import Imperator from '../Imperator'
 import Controls from '../../containers/Controls'
 
 const getClassName = loading => loading ? 'character loading' : 'character'
@@ -14,6 +15,7 @@ const CharacterType = ({ type, data }) => {
     case 'strategist': return <Strategist {...data} />
     case 'warmain': return <Warmain {...data} />
     case 'zu': return <Zu {...data} />
+    case 'imperator': return <Imperator {...data} />
     default: return <Noble {...data} />
   }
 }
