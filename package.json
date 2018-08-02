@@ -35,6 +35,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "history": "^4.7.2",
     "html-webpack-plugin": "^2.30.1",
+    "http2": "^3.3.7",
     "i18next": "^10.4.1",
     "i18next-resource-store-loader": "^0.1.2",
     "jsdom": "^9.8.3",
