@@ -17,7 +17,9 @@ const Layout = ({ type, children }) => {
       <Container fluid>
         <Row className='iamnobilis-main'>
           <Col>
-            {children}
+            <main>
+              {children}
+            </main>
           </Col>
         </Row>
       </Container>
