@@ -6,10 +6,10 @@ import 'redux-manifest/dist/styles.css'
 
 const Footer = props => <div className='footer'>
   <div className='icons'>
-    <a title='link to google drive system document.'target='_blank' href='https://docs.google.com/document/d/1oeTWDAhVmTqJvhKEZbncfig471zNVECe3P6e51zs-pA/edit?usp=sharing'>
+    <a title='link to google drive system document.'target='_blank' href='https://docs.google.com/document/d/1oeTWDAhVmTqJvhKEZbncfig471zNVECe3P6e51zs-pA/edit?usp=sharing' rel='noopener'>
       <i className='fab fa-google-drive' />
     </a>
-    <a title='link to github page.' target='_blank' href='https://github.com/mrprim/iamnobilis'>
+    <a title='link to github page.' target='_blank' href='https://github.com/mrprim/iamnobilis' rel='noopener'>
       <i className='fab fa-github' />
     </a>
   </div>
