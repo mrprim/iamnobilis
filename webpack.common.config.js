@@ -14,16 +14,19 @@ var watcherMessagePlugin = function () {
 }
 
 module.exports = {
-  entry: [
-    'babel-regenerator-runtime',
-    'core-js/fn/promise',
-    './app/index.js'
-  ],
+  entry: {
+    main: [
+      'babel-regenerator-runtime',
+      'core-js/fn/promise',
+      './app/index.js'
+    ],
+    sw: './app/serviceWorker.js'
+  },
 
   output: {
     publicPath: '',
     path: path.join(__dirname, './build/'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
 
   module: {

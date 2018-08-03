@@ -20,8 +20,8 @@ export function * loader (action) {
     i++
   }
 
-  const character = generateCharacter(action.characterType, action.character)
-  window.location.hash = action.characterType + '/' + encodeURIComponent(JSON.stringify(character))
+  generateCharacter(action.characterType, action.character)
+  // window.location.hash = action.characterType + '/' + encodeURIComponent(JSON.stringify(character))
 
   yield put(actions.setLoading(false))
 }
