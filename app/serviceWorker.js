@@ -1,0 +1,10 @@
+const serviceWorker = () => {
+  if ('serviceWorker' in window.navigator) {
+    // Use the window load event to keep the page load performant
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/index.html')
+    })
+  }
+}
+
+export default serviceWorker
