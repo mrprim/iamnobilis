@@ -6,6 +6,9 @@ import Layout from './containers/Layout'
 import configureStore from './store'
 import startSagas from './sagas'
 import routes from './routes'
+import serviceWorker from './serviceWorker'
+
+serviceWorker()
 
 export const store = configureStore()
 
