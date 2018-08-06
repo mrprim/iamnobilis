@@ -4,8 +4,8 @@ var webpack = require('webpack')
 var BundleCleaner = require('webpack-clean-obsolete-chunks')
 
 config.plugins.push(new HtmlWebpackPlugin({
-  title: 'iamnobilis **DEVELOPMENT**',
-  template: 'index.html.ejs',
+  title: 'I am... Nobilis **DEVELOPMENT**',
+  template: './app/index.html.ejs',
   inject: 'body',
   filename: 'index.html'
 }))
