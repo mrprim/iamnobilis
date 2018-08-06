@@ -27,6 +27,7 @@
     "babel-regenerator-runtime": "^6.5.0",
     "bootstrap": "^4.0.0",
     "compression": "^1.7.3",
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.23.1",
     "date-fns": "^1.29.0",
     "enzyme": "^2.6.0",
