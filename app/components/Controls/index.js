@@ -1,6 +1,8 @@
 import React from 'react'
 import Icon from '../Icon'
+import { Link as RouterLink } from 'react-router-dom'
 import './index.scss'
+import IconButton from '@material-ui/core/IconButton'
 
 const DeadLink = ({ type }) => (
   <span className='link dead'>
@@ -8,10 +10,12 @@ const DeadLink = ({ type }) => (
   </span>
 )
 
-const Link = ({ type, title, loadClick }) => (
-  <span className='link' title={title} onClick={loadClick(type)}>
-    <Icon type={type} />
-  </span>
+const Link = ({ type, title }) => (
+  <RouterLink to={`/${type}`}>
+    <IconButton title={title}>
+      <Icon type={type} />
+    </IconButton>
+  </RouterLink>
 )
 
 const Controls = ({ loadClick, copyToClipboardClick }) => (
@@ -22,18 +26,18 @@ const Controls = ({ loadClick, copyToClipboardClick }) => (
 
     <div className='character-types'>
       <div>
-        <Link title='Noble' type='noble' loadClick={loadClick} />
-        <Link title='Imperator' type='imperator' loadClick={loadClick} />
+        <Link title='Noble' type='noble' />
+        <Link title='Imperator' type='imperator' />
       </div>
       <div>
-        <DeadLink title='Deceiver' type='deceiver' loadClick={loadClick} />
-        <Link title='Warmain' type='warmain' loadClick={loadClick} />
-        <DeadLink title='Mimic' type='mimic' loadClick={loadClick} />
-        <Link title='Strategist' type='strategist' loadClick={loadClick} />
+        <DeadLink title='Deceiver' type='deceiver' />
+        <Link title='Warmain' type='warmain' />
+        <DeadLink title='Mimic' type='mimic' />
+        <Link title='Strategist' type='strategist' />
       </div>
       <div>
-        <DeadLink title='Actual' type='actual' loadClick={loadClick} />
-        <Link title='Zu' type='zu' loadClick={loadClick} />
+        <DeadLink title='Actual' type='actual' />
+        <Link title='Zu' type='zu' />
       </div>
     </div>
 

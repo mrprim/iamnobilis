@@ -1,4 +1,3 @@
-import { delay } from 'redux-saga'
 import { takeEvery, put } from 'redux-saga/effects'
 import * as types from '../constants/actionTypes'
 import * as actions from '../actions/character'
@@ -9,18 +8,8 @@ export default function * () {
 }
 
 export function * loader (action) {
-  let i = 0
-
   yield put(actions.setLoading(true))
-
-  while (i < 5) {
-    const char = generateCharacter(action.characterType)
-    yield put(actions.setCharacter(char))
-    yield delay(50)
-    i++
-  }
-
-  generateCharacter(action.characterType, action.character)
-
+  const char = yield generateCharacter(action.characterType, action.character)
+  yield put(actions.setCharacter(char))
   yield put(actions.setLoading(false))
 }
