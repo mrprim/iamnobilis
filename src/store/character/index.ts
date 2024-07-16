@@ -1,19 +1,13 @@
-import { CharacterState } from './state';
-import { adjective, estate, highlight, identity } from "../../generators";
 import { createWithEqualityFn } from 'zustand/traditional';
+import { character } from "../../generators";
+import { CharacterState } from './state';
 
 const useCharacterStore = createWithEqualityFn<CharacterState>((set) => ({
-  character: null,
+  character: character(),
   reroll: () => {
     set((state) => ({
       ...state,
-      character: {
-        type: 'noble',
-        identity: identity(),
-        highlight: highlight(),
-        adjective: adjective(),
-        estate: estate(),
-      }
+      character: character(),
     }))
   }
 }))

@@ -5,7 +5,7 @@ type CharacterActions = {
 }
 
 type CharacterData = {
-  character: Character | null;
+  character: Character;
 }
 
 type CharacterState = CharacterActions & CharacterData;
