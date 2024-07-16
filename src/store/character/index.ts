@@ -3,11 +3,11 @@ import { character } from "../../generators";
 import { CharacterState } from './state';
 
 const useCharacterStore = createWithEqualityFn<CharacterState>((set) => ({
-  character: character(),
+  character: character('noble'),
   reroll: () => {
     set((state) => ({
       ...state,
-      character: character(),
+      character: character('noble'),
     }))
   }
 }))

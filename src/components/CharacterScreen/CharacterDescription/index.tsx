@@ -1,7 +1,7 @@
 import { shallow } from "zustand/shallow";
 import Noble from "./Noble"
-import useCharacterStore from "../../store/character";
-import { FCwithClass } from "../..";
+import useCharacterStore from "../../../store/character";
+import { FCwithClass } from "../../..";
 import Zu from "./Zu";
 
 const Character: FCwithClass = ({ className }) => {

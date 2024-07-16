@@ -1,8 +1,8 @@
-import aVsAn from '../../utils/aVsAn'
-import useCharacterStore from '../../store/character';
+import aVsAn from '../../../utils/aVsAn'
+import useCharacterStore from '../../../store/character';
 import { shallow } from 'zustand/shallow';
 import clsx from 'clsx';
-import { FCwithClass } from '../..';
+import { FCwithClass } from '../../..';
 
 const Zu: FCwithClass = ({ className }) => {
   const character = useCharacterStore(s => s.character, shallow);
