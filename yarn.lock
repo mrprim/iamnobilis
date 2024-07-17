@@ -598,6 +598,11 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/uniqid@^5.3.4":
+  version "5.3.4"
+  resolved "https://registry.npmjs.org/@types/uniqid/-/uniqid-5.3.4.tgz#e5deca439a1db381e4692f7679ecf3d7f1264eb2"
+  integrity sha512-AgC+o3/8/QEHuU3w5w2jZ8auQtjSJ/s8G8RfEk9CYLogK1RGXqxhHH0wOEAu8uHXjvj8oh/dRtfgok4IHKxh/Q==
+
 "@typescript-eslint/eslint-plugin@^7.13.1":
   version "7.16.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-7.16.0.tgz#b3563927341eca15124a18c6f94215f779f5c02a"
@@ -2083,6 +2088,11 @@ typescript@^5.2.2:
   version "5.5.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.5.3.tgz#e1b0a3c394190838a0b168e771b0ad56a0af0faa"
   integrity sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==
+
+uniqid@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.npmjs.org/uniqid/-/uniqid-5.4.0.tgz#4e17bfcab66dfe33563411ae0c801f46ef964e66"
+  integrity sha512-38JRbJ4Fj94VmnC7G/J/5n5SC7Ab46OM5iNtSstB/ko3l1b5g7ALt4qzHFgGciFkyiRNtDXtLNb+VsxtMSE77A==
 
 update-browserslist-db@^1.1.0:
   version "1.1.0"

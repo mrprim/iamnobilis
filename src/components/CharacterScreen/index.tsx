@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { FCwithClass } from "../..";
 import Controls from "./CharacterControls";
 import Character from "./CharacterDescription";
-import TypeDescription from "./CharacterTypeDescription";
+import TypeDescription from "./CharacterType";
 
 const CharacterScreen: FCwithClass = ({ className }) => {
   return (

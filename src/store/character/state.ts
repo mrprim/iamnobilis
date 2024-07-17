@@ -1,7 +1,7 @@
-import { Character } from "../../model/character";
+import { Character, CharacterType } from "../../model/character";
 
 type CharacterActions = {
-  reroll: () => void;
+  reroll: (type?: CharacterType) => void;
 }
 
 type CharacterData = {

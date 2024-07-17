@@ -1,5 +1,6 @@
-import { CharacterType } from "../../model/character"
-import useCharacterStore from "../../store/character"
+import { CharacterType } from "../../../model/character"
+import useCharacterStore from "../../../store/character"
+import CharacterTypeDropdown from "./CharacterTypeDropdownMenu"
 
 const descriptions: Record<CharacterType, string> = {
   noble: 'One of the Powers of the world.',
@@ -13,13 +14,12 @@ const TypeDescription = () => {
     <div className="text-violet-300">
 
       <div className="font-bold">
-        I am a <span className="font-script uppercase text-xl">{type}</span>
+        I am a <CharacterTypeDropdown className="font-script uppercase text-xl underline" currentValue={type} />.
       </div>
 
       <div className="text-sm italic">
         {descriptions[type]}
       </div>
-
     </div>
   )
 }
