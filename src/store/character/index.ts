@@ -1,15 +1,45 @@
 import { createWithEqualityFn } from 'zustand/traditional';
-import { character } from "../../generators";
+import { character as characterGenerator } from "../../generators";
 import { CharacterState } from './state';
-import { CharacterType } from '../../model/character';
+import { Character, CharacterType } from '../../model/character';
+import { MutableRefObject } from 'react';
+import { decode, encode } from '../../utils/characterEncoder';
+import { getQueryParam, setQueryParam } from '../../utils/url-utils';
+
+const initializeCharacter = (): Character => {
+  const data = getQueryParam('c') ?? '';
+  const character = decode(data);
+
+  if (character) {
+    return character;
+  }
+  const newCharacter = characterGenerator('noble');
+  const encoded = encode(newCharacter);
+  setQueryParam('c', encoded)
+
+  return newCharacter
+};
 
 const useCharacterStore = createWithEqualityFn<CharacterState>((set) => ({
-  character: character('noble'),
-  reroll: (type?: CharacterType) => {
+  character: initializeCharacter(),
+  descriptionRef: null,
+  setDescriptionRef: (descriptionRef: MutableRefObject<HTMLDivElement | null>) => {
     set((state) => ({
       ...state,
-      character: character(type ?? state.character.type),
+      descriptionRef
     }))
+  },
+  reroll: (type?: CharacterType) => {
+    set((state) => {
+      const character = characterGenerator(type ?? state.character.type)
+      const data = encode(character);
+      setQueryParam('c', data)
+
+      return {
+        ...state,
+        character,
+      }
+    });
   }
 }))
 

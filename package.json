@@ -11,6 +11,11 @@
     "deploy": "yarn build && firebase deploy"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@mrprim/random-rpg-stuff": "^1.0.16",
     "@types/uniqid": "^5.3.4",
     "clsx": "^2.1.1",

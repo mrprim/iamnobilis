@@ -14,14 +14,11 @@ const Option: FC<{ optionValue: CharacterType, currentValue: CharacterType }> = 
   }, [isSelected, optionValue]);
 
   return (
-    <li>
-      <button onClick={onClick} className={
-        clsx("text-left block text-violet-300 uppercase px-4 py-2 w-full hover:bg-violet-900 ",
-          { 'text-white': isSelected }
-        )}>
-        {isSelected && '> '}
-        {optionValue}
-      </button>
+    <li onClick={onClick} className={clsx("uppercase text-left block text-violet-300 px-4 py-2 w-full hover:bg-violet-900 hover:cursor-pointer",
+      { 'text-white': isSelected }
+    )}>
+      <div className="inline-block w-4"> {isSelected && '>'}</div>
+      {optionValue}
     </li>
 
   )
